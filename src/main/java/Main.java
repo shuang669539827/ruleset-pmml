@@ -19,12 +19,14 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.dmg.pmml.PMML;
 import org.dmg.pmml.RuleSelectionMethod.Criterion;
+import sun.misc.IOUtils;
+import sun.nio.ch.IOUtil;
 
 public class Main {
 
 	private static final String OPT_SELECTION_METHOD = "selectionmethod";
 	private static final String OPT_DEFAULT_SCORE = "defaultscore";
-
+	private static String [] sssssss = new String[]{"/Users/jack/Documents/ideaWorkspace/ruleset-pmml/src/main/antlr4/model_20372.pmml"};
 	public static void main(String[] args) throws JAXBException, IOException, ConvertToPredicateException,
 			ConvertToOperatorException, DataTypeConsistencyException, ParseException {
 		// create Options object
@@ -34,9 +36,9 @@ public class Main {
 
 		options.addOption(OPT_DEFAULT_SCORE, true, "display current time");
 		options.addOption(OPT_SELECTION_METHOD, true, "display current time");
-		
+
 		CommandLineParser parser = new GnuParser();
-		CommandLine cmd = parser.parse( options, args);
+		CommandLine cmd = parser.parse( options, sssssss);
 		// convert
 		convert(cmd.getArgs()[0], 
 				Criterion.fromValue(cmd.getOptionValue(OPT_SELECTION_METHOD, "firstHit")),

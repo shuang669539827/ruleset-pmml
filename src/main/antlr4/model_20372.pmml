@@ -1,0 +1,29 @@
+<PMML xmlns="http://www.dmg.org/PMML-4_3" version="4.3">
+	<Header>
+		<Application name="JPMML-SkLearn" version="1.5-SNAPSHOT" />
+		<Timestamp>2019-11-11T02:51:40Z</Timestamp>
+	</Header>
+	<DataDictionary>
+		<DataField dataType="integer" name="y" optype="categorical">
+			<Value value="0" />
+			<Value value="1" />
+		</DataField>
+		<DataField dataType="double" name="CASH_ADVANCE_N" optype="continuous"><Value property="missing" value="6.668985507246377" /></DataField><DataField dataType="double" name="MAX_CASH_ADVANCE_24MON" optype="continuous"><Value property="missing" value="685.3199747176286" /></DataField><DataField dataType="double" name="MAX_BALANCE_24MON" optype="continuous"><Value property="missing" value="1403.3371706739208" /></DataField><DataField dataType="double" name="CASH_ADVANCE_PCT_TRANS" optype="continuous"><Value property="missing" value="0.3076694112489062" /></DataField><DataField dataType="double" name="INSTALLMENT_LOAN_PCT" optype="continuous"><Value property="missing" value="0.21555056009280119" /></DataField></DataDictionary>
+	<RegressionModel functionName="classification" normalizationMethod="logit">
+		<MiningSchema>
+			<MiningField name="y" usageType="target" />
+			<MiningField invalidValueTreatment="asMissing" name="CASH_ADVANCE_N" /><MiningField invalidValueTreatment="asMissing" name="MAX_CASH_ADVANCE_24MON" /><MiningField invalidValueTreatment="asMissing" name="MAX_BALANCE_24MON" /><MiningField invalidValueTreatment="asMissing" name="CASH_ADVANCE_PCT_TRANS" /><MiningField invalidValueTreatment="asMissing" name="INSTALLMENT_LOAN_PCT" /></MiningSchema>
+		<Output>
+			<OutputField dataType="double" feature="probability" name="probability(0)" optype="continuous" value="0" />
+			<OutputField dataType="double" feature="probability" name="probability(1)" optype="continuous" value="1" />
+		</Output>
+		<RegressionTable intercept="-0.256067896426559" targetCategory="1">
+			<NumericPredictor coefficient="-0.3021415683005752" name="CASH_ADVANCE_N_nor" />
+			<NumericPredictor coefficient="0.8543401474579737" name="MAX_CASH_ADVANCE_24MON_nor" />
+			<NumericPredictor coefficient="0.22354785309499042" name="MAX_BALANCE_24MON_nor" />
+			<NumericPredictor coefficient="0.6751801137591866" name="CASH_ADVANCE_PCT_TRANS_nor" />
+			<NumericPredictor coefficient="0.6475488767238932" name="INSTALLMENT_LOAN_PCT_nor" />
+		</RegressionTable>
+		<RegressionTable intercept="0.0" targetCategory="0" />
+	</RegressionModel>
+<TransformationDictionary><DerivedField name="CASH_ADVANCE_N_nor"><Apply function="if"><Apply function="isNotMissing"><FieldRef field="CASH_ADVANCE_N" /></Apply><Apply function="/"><Apply function="-"><FieldRef field="CASH_ADVANCE_N" /><Constant dataType="double">6.668985507246377</Constant></Apply><Constant dataType="double">8.357706591164382</Constant></Apply><Constant dataType="double">0.0</Constant></Apply></DerivedField><DerivedField name="MAX_CASH_ADVANCE_24MON_nor"><Apply function="if"><Apply function="isNotMissing"><FieldRef field="MAX_CASH_ADVANCE_24MON" /></Apply><Apply function="/"><Apply function="-"><FieldRef field="MAX_CASH_ADVANCE_24MON" /><Constant dataType="double">685.3199747176286</Constant></Apply><Constant dataType="double">1253.1952717456493</Constant></Apply><Constant dataType="double">0.0</Constant></Apply></DerivedField><DerivedField name="MAX_BALANCE_24MON_nor"><Apply function="if"><Apply function="isNotMissing"><FieldRef field="MAX_BALANCE_24MON" /></Apply><Apply function="/"><Apply function="-"><FieldRef field="MAX_BALANCE_24MON" /><Constant dataType="double">1403.3371706739208</Constant></Apply><Constant dataType="double">1843.479948293296</Constant></Apply><Constant dataType="double">0.0</Constant></Apply></DerivedField><DerivedField name="CASH_ADVANCE_PCT_TRANS_nor"><Apply function="if"><Apply function="isNotMissing"><FieldRef field="CASH_ADVANCE_PCT_TRANS" /></Apply><Apply function="/"><Apply function="-"><FieldRef field="CASH_ADVANCE_PCT_TRANS" /><Constant dataType="double">0.3076694112489062</Constant></Apply><Constant dataType="double">0.2708019637420097</Constant></Apply><Constant dataType="double">0.0</Constant></Apply></DerivedField><DerivedField name="INSTALLMENT_LOAN_PCT_nor"><Apply function="if"><Apply function="isNotMissing"><FieldRef field="INSTALLMENT_LOAN_PCT" /></Apply><Apply function="/"><Apply function="-"><FieldRef field="INSTALLMENT_LOAN_PCT" /><Constant dataType="double">0.21555056009280119</Constant></Apply><Constant dataType="double">0.2255088761059976</Constant></Apply><Constant dataType="double">0.0</Constant></Apply></DerivedField></TransformationDictionary></PMML>
