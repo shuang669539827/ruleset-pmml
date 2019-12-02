@@ -1,4 +1,5 @@
 
+import com.*;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -39,8 +40,8 @@ public class ConvertTest {
     }
 
     @Test
-    public void testRule() throws IOException, ConvertToPredicateException, 
-    ConvertToOperatorException, DataTypeConsistencyException {
+    public void testRule() throws IOException, ConvertToPredicateException,
+            ConvertToOperatorException, DataTypeConsistencyException {
     	InputStream inputFile = getClass().getResourceAsStream(this.testString);
     	
         ANTLRInputStream input = new ANTLRInputStream(inputFile);

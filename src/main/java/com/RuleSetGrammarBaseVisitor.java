@@ -1,4 +1,4 @@
-// Generated from /Users/jack/Documents/ideaWorkspace/ruleset-pmml/src/main/antlr4/RuleSetGrammar.g4 by ANTLR 4.7.2
+package com;// Generated from /Users/jack/Documents/ideaWorkspace/ruleset-pmml/src/main/antlr4/RuleSetGrammar.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**

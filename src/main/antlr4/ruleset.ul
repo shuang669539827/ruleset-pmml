@@ -1,0 +1,8 @@
+importVariableLibrary "jcr:/sdfs/测试文件.vl.xml";
+rule "rule01"
+if aaa > 0 and bbbb <18
+then
+
+else
+
+end

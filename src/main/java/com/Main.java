@@ -1,32 +1,26 @@
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
+package com;
 
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.TokenStream;
-import org.apache.commons.cli.CommandLine;
-import org.apache.commons.cli.CommandLineParser;
-import org.apache.commons.cli.DefaultParser;
-import org.apache.commons.cli.GnuParser;
-import org.apache.commons.cli.Options;
-import org.apache.commons.cli.ParseException;
+import org.apache.commons.cli.*;
 import org.dmg.pmml.PMML;
 import org.dmg.pmml.RuleSelectionMethod.Criterion;
-import sun.misc.IOUtils;
-import sun.nio.ch.IOUtil;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class Main {
 
 	private static final String OPT_SELECTION_METHOD = "selectionmethod";
 	private static final String OPT_DEFAULT_SCORE = "defaultscore";
-	private static String [] sssssss = new String[]{"/Users/jack/Documents/ideaWorkspace/ruleset-pmml/src/main/antlr4/model_20372.pmml"};
+	private static String [] sssssss = new String[]{"/Users/jack/Documents/ideaWorkspace/ruleset-pmml/src/main/antlr4/ruleset.ul"};
 	public static void main(String[] args) throws JAXBException, IOException, ConvertToPredicateException,
 			ConvertToOperatorException, DataTypeConsistencyException, ParseException {
 		// create Options object
